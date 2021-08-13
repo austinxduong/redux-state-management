@@ -1,5 +1,11 @@
 import React from 'react';
+import { SwitchCase, Route } from 'react-router-dom';
+import CharacterList from '../characters/CharacterList';
 
 export default function App() {
-  return <h1>Hello World</h1>;
-}
+  return (
+    <Switch>
+      <Route exact path="/" component={CharacterList} />
+    </Switch>
+  )
+};
