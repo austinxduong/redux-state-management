@@ -1,19 +1,20 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const Character = ({ Name, PicUrl }) => (
-<figure>
+  <figure>
     <img src={PicUrl} alt={Name} />
     <figcaption>
-        <p>name: {Name}</p>
-        {/* <p> placeholder to add more stuff once api connects and renders</p> */}
+      <p>name: {Name}</p>
+      {/* <p> placeholder to add more stuff once api connects and renders</p> */}
     </figcaption>
-</figure>
+  </figure>
 );
 
 Character.propTypes = {
-    Name: PropTypes.string.isRequired,
-    PicUrl: PropTypes.string.isRequired,
+  Name: PropTypes.string.isRequired,
+  PicUrl: PropTypes.string.isRequired,
 };
 
-export default Character
+export default Character;
