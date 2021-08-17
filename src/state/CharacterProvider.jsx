@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-import { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { fetchAllCharacters } from '../services/fetchApi';
 
 const CharacterContext = createContext();
@@ -15,11 +15,11 @@ export const CharacterProvider = ({ children }) => {
 
   useEffect(() => {
     apiMap[selectedApi]().then(setCharacters);
-  }, [setSelectedApi]);
+  }, [selectedApi]);
 
 
   return (
-    <CharacterContext.Provider value={{ characters }}>
+    <CharacterContext.Provider value={{ characters, setSelectedApi, apiMap }}>
       {children}
     </CharacterContext.Provider>
 
