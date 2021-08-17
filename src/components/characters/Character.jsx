@@ -2,19 +2,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Character = ({ Name, PicUrl }) => (
+const Character = ({ name, image }) => (
   <figure>
-    <img src={PicUrl} alt={Name} />
+    <img src={image} alt={name} />
     <figcaption>
-      <p>name: {Name}</p>
+      <p>name: {name}</p>
       {/* <p> placeholder to add more stuff once api connects and renders</p> */}
     </figcaption>
   </figure>
 );
 
 Character.propTypes = {
-  Name: PropTypes.string.isRequired,
-  PicUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Character;

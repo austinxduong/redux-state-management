@@ -7,10 +7,15 @@ const CharacterContext = createContext();
 
 export const CharacterProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
+  const [selectedApi, setSelectedApi] = useState('futurama');
+
+  const apiMap = {
+    futurama: fetchAllCharacters,
+  };
 
   useEffect(() => {
-    fetchAllCharacters().then(setCharacters);
-  }, []);
+    apiMap[selectedApi]().then(setCharacters);
+  }, [setSelectedApi]);
 
 
   return (
@@ -25,4 +30,15 @@ export const useCharacters = () => {
   const { characters } = useContext(CharacterContext);
   return characters;
 };
+
+export const useSetSelectedApi = () => {
+  const { setSelectedApi } = useContext(CharacterContext);
+  return setSelectedApi;
+};
+
+export const useAvailableAPIs = () => {
+  const { apiMap } = useContext(CharacterContext);
+  return Object.keys(apiMap);
+};
+
 
