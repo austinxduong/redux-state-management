@@ -12,7 +12,7 @@ const CharacterList = () => {
     </li>
   ));
 
-  return <ul className={styles.Character}>{characterElements}</ul>;
+  return <ul className={styles.CharacterList}>{characterElements}</ul>;
 };
 
 export default CharacterList;

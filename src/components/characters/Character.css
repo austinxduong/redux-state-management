@@ -1,5 +1,7 @@
 .Character img {
-    height: 15rem;
-    width: 20rem;
+    display: grid;
+    height: 18rem;
+    width: 14rem;
     object-fit: cover;
 }
+
